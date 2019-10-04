@@ -1,0 +1,22 @@
+# simple-socketio-load-test.yaml
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 600
+      arrivalRate: 5
+scenarios:
+  - engine: "socketio"
+    flow:
+      # - emit:
+      #     channel: "chat message"
+      #     data: "ping"
+      #     acknowledge:
+      #       match:
+      #         json: "$.string2"
+      #         value: 'bananas'
+       - emit:
+          channel: "send message"
+          data: "ping"
+          response: 
+             channel: "receive message"
+             data: "pong"
