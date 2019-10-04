@@ -11,14 +11,8 @@ io.on('connection', function (socket) {
     console.log('Socket (server-side): send message:', msg);
     io.emit('receive message', "pong");
   });
-  socket.on('chat message', function (data, callback) {
+  socket.on('chat message', function (data) {
     console.log('Socket (server-side): chat message:', data);
-    var responseData = {
-      string1: 'I like ',
-      string2: 'bananas',
-      string3: ' dude!'
-    };
-    callback(responseData);
   });
 });
 
