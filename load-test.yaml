@@ -7,16 +7,19 @@ config:
 scenarios:
   - engine: "socketio"
     flow:
-      - emit:
-          channel: "chat message"
-          data: "ping"
-          # acknowledge:
-          #   match:
-          #     json: "$.string2"
-          #     value: 43
-      - emit:
-          channel: "send message"
-          data: "ping"
-          response: 
-             channel: "receive message"
-             data: "pong"
+      - loop:
+          - emit:
+              channel: "chat message"
+              data: "ping"
+              # acknowledge:
+              #   match:
+              #     json: "$.string2"
+              #     value: 43
+          - emit:
+              channel: "send message"
+              data: "ping"
+              response: 
+                channel: "receive message"
+                data: "pong"
+        count: 1000
+      
