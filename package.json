@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "socker.io": "0.0.0-alpha-beta",
-    "socket.io": "^2.3.0",
-    "socket.io-client": "^2.3.0"
+    "socket.io": "^2.5.0",
+    "socket.io-client": "^2.5.0"
   }
 }
